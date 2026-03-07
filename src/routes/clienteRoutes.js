@@ -1,45 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const Cliente = require('../model/Cliente');
-const { where } = require('sequelize');
+const clienteController = require('../controllers/clienteController');
 
-router.get('/', async (req, res) => {
-    try {
-        return res.json(await Cliente.findAll());
-    } catch(error) {
-        res.status(500).send(error.message);
-    };
-});
+router.get('/', clienteController.getClientes);
 
-router.get('/:id', async (req, res) => {
-    try {
-        return res.json(await Cliente.findByPk({where: {id: req.params.id}}));
-    } catch(error) {
-        res.status(500).send(error.message);
-    };
-});
+router.get('/:id', clienteController.getClienteById);
 
-router.post('/', async (req, res) => {
-    try {
-        return res.json(await Cliente.create(req.body));
-    } catch(error) {
-        res.status(500).send(error.message);
-    };
-});
+router.post('/', clienteController.createCliente);
 
-router.put('/:id', async (req, res) => {
-    try {
-        return res.json(await Cliente.update(req.body, {where: {id: req.params.id}}));
-    } catch(error) {
-        res.status(500).send(error.message);
-    };
-});
+router.put('/:id', clienteController.updateCliente);
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', clienteController.deleteCliente);
 
-    try {
-        res.json(await Cliente.destroy({where: {id: req.params.id}}));
-    } catch(error) {
-        res.status.send(error.message)
-    }
-});
+module.exports = router;
