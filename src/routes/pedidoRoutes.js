@@ -7,3 +7,5 @@ router.get('/:id', pedidoController.getPedidosById);
 router.create('/:id', pedidoController.createPedido);
 router.update('/:id', pedidoController.updatePedido);
 router.delete('/:id', pedidoController.deletePedido);
+
+module.exports = router;

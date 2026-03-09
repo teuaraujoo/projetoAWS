@@ -16,4 +16,7 @@ const Pedido = sequelize.define("pedido", {
 }, {timestamps: true}, {tablename: 'pedido'});
 
 Pedido.belongsTo(Cliente);
+Cliente.hasMany(Pedido);
+
+Produto.hasMany(Pedido); 
 Pedido.belongsTo(Produto);
