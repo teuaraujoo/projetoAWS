@@ -1,3 +1,5 @@
+// entry point
+
 const express = require('express');
 const produtoRoutes = require('./routes/produtoRoutes');
 const clienteRoutes = require('./routes/clienteRoutes');
@@ -6,12 +8,14 @@ const pedidoRoutes = require('./routes/pedidoRoutes');
 const app = express();
 
 app.use(express.json());
+app.use(express.cors());
 
 app.use('/produtos', produtoRoutes);
 app.use('/clientes', clienteRoutes);
 app.use('/pedidos', pedidoRoutes);
 
-
+// cors -> mecanismo de segurança que premite que um servidor autorize recursos a serem acessados 
+// sequelize sync -> sincroniza automaticamente os models com as tabelas correspondentes do banco
 // force -> true -> drop all tables and recreate them
 // alter -> true -> modify tables to match the model
 
