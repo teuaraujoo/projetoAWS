@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets//styles/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 
@@ -30,22 +33,23 @@
                 tabindex="0">
                 <div>
                     <h1>Cliente</h1>
+                    <input class="d-none" id="idCliente" />
                     <form class="row g-3">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">Nome</label>
-                            <input type="email" class="form-control" id="inputEmail4">
+                            <input type="email" class="form-control" id="inputNome">
                         </div>
                         <div class="col-md-6">
                             <label for="inputPassword4" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputPassword4">
+                            <input type="email" class="form-control" id="inputEmail">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="(99) 90000-9999">
+                            <input type="text" class="form-control" id="inputTel" placeholder="(99) 90000-9999">
                         </div>
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">Nascimento</label>
-                            <input type="date" class="form-control" id="inputAddress2"
+                            <input type="date" class="form-control" id="inputNasc"
                                 placeholder="Apartment, studio, or floor">
                         </div>
                         <div class="col-md-4">
@@ -69,41 +73,19 @@
                                 <th scope="col">Telefone</th>
                                 <th scope="col">Nascimento</th>
                                 <th scope="col">Sexo</th>
+                                <th scope="col">Ações</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>mark@email.com</td>
-                                <td>xx</td>
-                                <td>10/02/2002</td>
-                                <td>M</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>jacob@email.com</td>
-                                <td>xx</td>
-                                <td>10/02/2002</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>John</td>
-                                <td>jhon@email.com</td>
-                                <td>xx</td>
-                                <td>10/02/2002</td>
-                                <td>M</td>
-                            </tr>
+                        <tbody id="tableClientes">
+
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
-            tabindex="0">
-            <div>
-                <h1>Produto</h1>
+                tabindex="0">
+                <div>
+                    <h1>Produto</h1>
                     <div>
                         <form class="row g-3">
                             <div class="col-md-6">
@@ -117,17 +99,17 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">Descrição</label>
                                 <input type="text" class="form-control" id="inputAddress"
-                                placeholder="Digite a descrição">
+                                    placeholder="Digite a descrição">
                             </div>
                             <div class="col-12">
                                 <label for="inputAddress2" class="form-label">Estoque</label>
                                 <input type="number" class="form-control" id="inputAddress2"
-                                placeholder="Quantidade no estoque">
+                                    placeholder="Quantidade no estoque">
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <button type="button" class="btn btn-primary">Sign in</button>
-                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="button" class="btn btn-primary">Sign in</button>
+                    </div>
                     </form>
                     <table class="table mt-5">
                         <thead>
@@ -173,6 +155,10 @@
         </div>
     </div>
     <script src="./assets/script/bootstrap.bundle.min.js"></script>
+    <script src="./assets/script/utils/listarClientes.js"></script>
+    <script src="./assets/script/utils/editarClientes.js"></script>
+    <script src="./assets/script/utils/salvarCliente.js"></script>
+    <script src="./assets/script/utils/listarProdutos.js"></script>
 </body>
 
 </html>

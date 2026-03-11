@@ -1,14 +1,16 @@
 // entry point
 
 const express = require('express');
-const produtoRoutes = require('./routes/produtoRoutes');
-const clienteRoutes = require('./routes/clienteRoutes');
-const pedidoRoutes = require('./routes/pedidoRoutes');
+const produtoRoutes = require('./src/routes/produtoRoutes');
+const clienteRoutes = require('./src/routes/clienteRoutes');
+const pedidoRoutes = require('./src/routes/pedidoRoutes');
+// const sequelize = require('./src/config/database/sequelize');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.cors());
+app.use(express.static('public'));
 
 app.use('/produtos', produtoRoutes);
 app.use('/clientes', clienteRoutes);
